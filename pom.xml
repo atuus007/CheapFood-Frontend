@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>CheapFood</artifactId>
+		<groupId>rft.unideb</groupId>
+		<version>1.0</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>cheapfood-web</artifactId>
+	<packaging>jar</packaging>
+	<name>cheapfood-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<npm.executable>npm</npm.executable>
+	</properties>
+
+	<build>
+		<finalName>cheapfood-web</finalName>
+		<plugins>
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>v6.11.4</nodeVersion>
+              <npmVersion>5.5.1</npmVersion>
+			   <workingDirectory>${project.basedir}</workingDirectory>
+			   <arguments>
+					<argument>run</argument>
+					<argument>tsc</argument>
+                </arguments>
+            </configuration>
+          </execution>
+        </executions>
+			</plugin>
+		</plugins>
+	</build>
+  <profiles>
+       <profile>
+         <id>platform-windwos</id>
+         <activation>
+           <os>
+              <family>windwos</family>
+           </os>
+         </activation>
+         <properties>
+           <npm.executable>npm.cmd</npm.executable>
+         </properties>
+       </profile>
+  </profiles>
+</project>

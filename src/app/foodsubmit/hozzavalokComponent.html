@@ -1,0 +1,75 @@
+<div [formGroup]="hval">
+
+    <div class="form-group col-xs-6">
+      <table>
+        <tr>
+          <td class="foodtd">
+        <label>Hozzávaló: </label>
+      </td>
+      <td class="foodtd">
+        <input type="text" class="form-control" formControlName="name" placeholder="pl: liszt" required maxlength="25">
+          </td>
+          <td class="foodtd">
+        <small [hidden]="hval.controls.name.valid" class="text-danger">
+            Adj meg valamilyen összetevőt
+        </small>
+      </td>
+    </tr>
+</table>
+    </div>
+
+    <div class="form-group col-xs-6">
+      <table>
+        <tr>
+          <td class="foodtd">
+        <label>Ár: </label>
+      </td>
+      <td class="foodtd">
+        <input type="number" class="form-control" placeholder="pl: 2" step="1" required formControlName="atlagar">
+      </td>
+      <td class="foodtd">
+        <small [hidden]="hval.controls.atlagar.valid" class="text-danger">
+            Add meg az árat!
+        </small>
+      </td>
+    </tr>
+</table>
+    </div>
+    <div class="form-group col-xs-6">
+      <table>
+        <tr>
+          <td class="foodtd">
+        <label>Mennyiséget: </label>
+      </td>
+      <td class="foodtd">
+        <input type="number" class="form-control" placeholder="pl: 2" step="0.1" required formControlName="mennyiseg">
+      </td>
+      <td class="foodtd">
+        <small [hidden]="hval.controls.mennyiseg.valid" class="text-danger">
+            Add meg az összetevő mennyiségét!
+        </small>
+      </td>
+    </tr>
+</table>
+    </div>
+    <div class="form-group col-xs-6">
+      <table>
+        <tr>
+          <td class="foodtd">
+        <label>Mértékegység: </label>
+      </td>
+      <td class="foodtd">
+        <select formControlName='mennyisegfajta' name="mennyisegfajta" class="form-control">
+            <option value=1>kg</option>
+            <option value=2>evőkanál</option>
+            <option value=3>teáskanál</option>
+            <option value=4>dkg</option>
+            <option value=5>gramm</option>
+            <option value=6>db</option>
+            <option value=7>liter</option>
+        </select>
+      </td>
+    </tr>
+   </table>
+    </div>
+</div>

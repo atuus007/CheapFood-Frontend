@@ -1,0 +1,43 @@
+<div class="foodcustomcss">
+
+  <h1>Keresés eredménye:</h1>
+  <table class="foodlistTable">
+    <tbody>
+      <tr *ngFor="let food of foodResult; let i=index; let ing of adf " (click)='findIngById(food.id, i)' [class.active]="i == selectedRow">
+        <td class="tdfood">
+          <p>{{food.id}}</p>
+        </td>
+        <td class="tdfood">
+          <p>{{food.name}} </p>
+        </td>
+        <td class="tdfood">
+          <p>{{food.mennyiseg}}</p>
+        </td>
+        <td class="tdfood">
+          <p> {{food.mennyisegfajta | quantity}}</p>
+        </td>
+        <td class="tdfood">
+          <p> {{food.elkeszitesi_ido}} </p>
+        </td>
+        <td class="tdfood">
+          <p>{{food.osszar}}</p>
+        </td>
+        <td class="tdfood">
+          <div class="foodIngrediements">
+            <p>Összetevők:</p>
+            <ol *ngFor="let ing of ingredientRes">
+
+              <li *ngIf="selectedRow==i">
+                {{ing.hozzavalok_name}} {{ing.szorzo}} {{ing.mennyisegek_name}}
+
+              </li>
+            </ol>
+
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

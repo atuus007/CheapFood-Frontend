@@ -1,0 +1,54 @@
+<div class="etelek-feliras">
+  <table style="text-align: center;">
+    <tr>
+      <td id="align">
+        <p></p>
+      </td>
+      <td>
+        <p>
+          <strong>Válassz, mennyi pénzt szánsz az étel elkészítésére:</strong>
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="etelek-gombok">
+  <table width="930px">
+    <tr>
+      <td>
+        <a [routerLink]="['f2']" id="food-button">200 - 400 FT</a>
+      </td>
+      <td>
+        <a [routerLink]="['f4']" id="food-button">400 - 600 FT</a>
+      </td>
+      <td>
+        <a [routerLink]="['f6']" id="food-button">600 - 800 FT</a>
+      </td>
+      <td>
+        <a [routerLink]="['f8']" id="food-button">800 - 1000 FT</a>
+      </td>
+      <td>
+        <a [routerLink]="['fall']" id="food-button">Mind</a>
+      </td>
+    </tr>
+
+  </table >
+  <table width="930px" id="etelek-gombok1">
+    <tr>
+      <td>
+        <label class="stronglabel">Minimum ár: </label>
+        <input type="number" placeholder="pl: 2" step="1" [(ngModel)]='minar'>
+      </td>
+      <td>
+        <label class="stronglabel">Maximum ár: </label>
+        <input type="number" placeholder="pl: 2" step="1" [(ngModel)]='maxar'>
+      </td>
+      <td>
+        <a [routerLink]="['foodcustom/',minar, maxar]" id="food-button">Keres</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="containter">
+  <router-outlet></router-outlet>
+</div>
